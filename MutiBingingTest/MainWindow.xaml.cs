@@ -6,11 +6,12 @@ namespace MutiBingingTest
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window,INotifyPropertyChanged
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private string _userInput = string.Empty;
 
 
+        //test文字列
 
         //ユーザー入力用文字列
         public string UserInput
@@ -23,7 +24,7 @@ namespace MutiBingingTest
                     _userInput = value;
                     StringB = value;  // ここを変更
                     OnPropertyChanged(nameof(UserInput));
-                  
+
                     //$"-b:v {value}"
                 }
             }
@@ -42,10 +43,10 @@ namespace MutiBingingTest
             set
             {
 
-                    _stringB = $"-b:v {value}k";
-                    OnPropertyChanged(nameof(StringB));  // 変更通知
+                _stringB = $"-b:v {value}k";
+                OnPropertyChanged(nameof(StringB));  // 変更通知
 
-                
+
             }
         }
 
@@ -56,7 +57,7 @@ namespace MutiBingingTest
             // ビューモデルまたはコードビハインドのプロパティに初期値を設定
 
             DataContext = this;
-         
+
         }
         // プロパティが変更された時にUIに通知するためのヘルパーメソッド
         protected void OnPropertyChanged(string propertyName)
